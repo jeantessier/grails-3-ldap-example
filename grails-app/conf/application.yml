@@ -142,3 +142,5 @@ grails:
                     base: dc=jeantessier,dc=com
             password:
                 algorithm: SHA-256
+            logout.postOnly: false
+
