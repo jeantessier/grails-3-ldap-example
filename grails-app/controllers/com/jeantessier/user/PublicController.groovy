@@ -2,8 +2,13 @@ package com.jeantessier.user
 
 class PublicController {
 
+    def springSecurityService
+    
     def index() {
-        render "Public access"
+        [
+            message: "Public access",
+            principal: springSecurityService.principal,
+        ]
     }
 
 }
