@@ -126,3 +126,19 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+---
+grails:
+    plugin:
+        springsecurity:
+            ldap:
+                context:
+                    managerDn: cn=admin,dc=jeantessier,dc=com
+                    managerPassword: admin
+                    server: ldap://localhost
+                authorities:
+                    groupSearchBase: ou=groups,dc=jeantessier,dc=com
+                search:
+                    base: dc=jeantessier,dc=com
+            password:
+                algorithm: SHA-256
