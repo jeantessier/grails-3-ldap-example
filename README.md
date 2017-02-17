@@ -17,8 +17,8 @@ The new LDAP server will have a default admin account
 I put some test data in `user_roles.ldif` that you can use to seed the LDAP
 server.  You can load this test data with:
 
-    docker cp user_roles.ldif openldap-jeantessier:/tmp/user_roles.ldif
-    docker exec openldap-jeantessier ldapadd -x -h localhost -D "cn=admin,dc=jeantessier,dc=com" -w admin -f /tmp/user_roles.ldif
+    docker cp user_roles.ldif openldap:/tmp/user_roles.ldif
+    docker exec openldap ldapadd -x -h localhost -D "cn=admin,dc=jeantessier,dc=com" -w admin -f /tmp/user_roles.ldif
 
 The test data includes a test account `jean` (with password "abcd1234") that has
 authorities `ROLE_USER` and `ROLE_ADMIN`.  As such, this account can access the
