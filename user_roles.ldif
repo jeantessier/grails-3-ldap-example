@@ -1,0 +1,50 @@
+dn: ou=people,dc=jeantessier,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: people
+
+dn: uid=jean,ou=people,dc=jeantessier,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: posixAccount
+objectClass: top
+cn: jean
+gidNumber: 1
+homeDirectory: /home/jean
+sn: tessier
+uid: jean
+uidNumber: 1
+userPassword: abcd1234
+
+dn: uid=mylene,ou=people,dc=jeantessier,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: posixAccount
+objectClass: top
+cn: mylene
+gidNumber: 1
+homeDirectory: /home/mylene
+sn: mayrand
+uid: mylene
+uidNumber: 2
+userPassword: abcd1234
+
+dn: ou=groups,dc=jeantessier,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=user,ou=groups,dc=jeantessier,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: user
+uniqueMember: uid=jean,ou=people,dc=jeantessier,dc=com
+uniqueMember: uid=mylene,ou=people,dc=jeantessier,dc=com
+
+dn: cn=admin,ou=groups,dc=jeantessier,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: admin
+uniqueMember: uid=jean,ou=people,dc=jeantessier,dc=com
