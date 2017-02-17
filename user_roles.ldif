@@ -1,7 +1,21 @@
+#
+# Users
+#
+
+# Root of the subtree that holds user records.
 dn: ou=people,dc=jeantessier,dc=com
 objectClass: organizationalUnit
 objectClass: top
 ou: people
+
+# Individual users are listed below.
+
+# Individual users are identified by the "uid" attribute.
+# The sample passwords are set in clear to "abcd1234".
+# If you add new users:
+#     set "cn" to the same value as "uid"
+#     set "sn" to the user's last name
+#     set "uidNumber" to unique number value (you can simply increment by 1)
 
 dn: uid=jean,ou=people,dc=jeantessier,dc=com
 objectClass: inetOrgPerson
@@ -31,10 +45,27 @@ uid: mylene
 uidNumber: 2
 userPassword: abcd1234
 
+#
+# Roles
+#
+
+# Root of the subtree that holds role records and which users have which role.
 dn: ou=groups,dc=jeantessier,dc=com
 objectClass: organizationalUnit
 objectClass: top
 ou: groups
+
+# Individual roles are listed below.
+
+# Individual roles are identified by the "cn" attribute.
+# The spring-security-ldap plugin will convert "cn" to Spring Security role names.
+# E.g.,
+#     "user" will become "ROLE_USER"
+#     "admin" will become "ROLE_ADMIN"
+#     "multiple words" would become "ROLE_MULTIPLE_WORDS"
+#     "words_with_underscores" would become "ROLE_WORDS_WITH_UNDERSCORES"
+# If you add new roles, copy the "dn" from users with that role to individual
+# "uniqueMember" entries.
 
 dn: cn=user,ou=groups,dc=jeantessier,dc=com
 objectClass: groupOfUniqueNames
