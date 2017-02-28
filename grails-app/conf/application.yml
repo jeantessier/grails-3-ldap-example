@@ -131,6 +131,7 @@ environments:
 grails:
     plugin:
         springsecurity:
+            providerNames: [ "ldapAuthProvider", "anonymousAuthenticationProvider" ]
             ldap:
                 context:
                     managerDn: cn=admin,dc=jeantessier,dc=com
